@@ -32,7 +32,7 @@ export default function ResultsSection() {
         >
           <VideoFrame
             src="https://res.cloudinary.com/dhobvmeds/video/upload/v1770439912/WhatsApp_Video_2026-02-06_at_8.15.31_PM_npy2vr.mp4"
-            poster="https://res.cloudinary.com/dhobvmeds/video/upload/so_1,f_jpg/v1770439912/WhatsApp_Video_2026-02-06_at_8.15.31_PM_npy2vr.jpg"
+            poster="https://res.cloudinary.com/dhobvmeds/video/upload/so_1,f_jpg,q_auto,w_640/v1770439912/WhatsApp_Video_2026-02-06_at_8.15.31_PM_npy2vr.jpg"
             className="aspect-video bg-card"
             overlay={
               <div className="text-center">

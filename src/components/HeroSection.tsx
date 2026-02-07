@@ -69,7 +69,7 @@ export default function HeroSection() {
           <div className="relative rounded-2xl overflow-hidden gold-border p-[1px] gold-glow">
             <VideoFrame
               src="https://res.cloudinary.com/dhobvmeds/video/upload/v1770439948/WhatsApp_Video_2026-02-06_at_8.15.30_PM_eecmnv.mp4"
-              poster="https://res.cloudinary.com/dhobvmeds/video/upload/so_1,f_jpg/v1770439948/WhatsApp_Video_2026-02-06_at_8.15.30_PM_eecmnv.jpg"
+              poster="https://res.cloudinary.com/dhobvmeds/video/upload/so_1,f_jpg,q_auto,w_640/v1770439948/WhatsApp_Video_2026-02-06_at_8.15.30_PM_eecmnv.jpg"
               className="bg-card rounded-2xl overflow-hidden aspect-video"
               overlay={
                 <div className="text-center">
