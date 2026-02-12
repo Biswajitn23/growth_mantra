@@ -21,7 +21,7 @@ export default function CTASection() {
             <span className="gold-text">Market Leader?</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">
-            Join the founders and creators who trust Growth Mantra to scale their revenue with precision.
+            Join the founders and creators who trust GrowMantra to scale their revenue with precision.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto">

@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: 'Arjun Kapoor',
     role: 'Founder, ScaleUp Digital',
-    quote: 'Growth Mantra transformed our acquisition strategy. We went from burning cash to a 4x ROAS in under 90 days.',
+    quote: 'GrowMantra transformed our acquisition strategy. We went from burning cash to a 4x ROAS in under 90 days.',
     stars: 5,
   },
   {

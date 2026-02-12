@@ -18,7 +18,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="text-xs text-muted-foreground">
-          © 2026 Growth Mantra. All rights reserved.
+          © 2026 GrowMantra. All rights reserved.
         </p>
       </div>
     </footer>

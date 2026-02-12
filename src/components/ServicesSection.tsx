@@ -5,28 +5,45 @@ import { BarChart3, Users, Bot, Target, Share2 } from 'lucide-react';
 const services = [
   {
     icon: BarChart3,
-    title: 'Performance Marketing',
-    description: 'Data-driven paid campaigns across Meta, Google, and programmatic channels that deliver measurable ROI.',
+    title: 'Performance Marketing Infrastructure',
+    description:
+      'Data-driven paid acquisition systems engineered for predictable scaling, CAC optimization, and revenue growth across all major platforms.',
   },
   {
     icon: Users,
-    title: 'Influencer & Creator Growth',
-    description: 'Strategic creator partnerships and influencer systems that amplify brand reach authentically.',
+    title: 'Influencer & Creator Growth Systems',
+    description:
+      'Structured creator ecosystems, ambassador networks, and monetization frameworks that turn influence into scalable revenue engines.',
   },
   {
     icon: Bot,
-    title: 'AI Content & Automation',
-    description: 'AI-powered content engines and workflow automation that scale your output without scaling your team.',
+    title: 'AI Agents & Automation Infrastructure',
+    description:
+      'Custom-built AI agents, chatbots, workflow automation, CRM intelligence, and internal tools that eliminate manual operations and drive efficiency.',
   },
   {
     icon: Target,
-    title: 'Funnel & Brand Strategy',
-    description: 'Full-funnel growth architecture from awareness to conversion, built for compounding results.',
+    title: 'Website & App Engineering',
+    description:
+      'High-performance websites, SaaS platforms, dashboards, and mobile apps built for conversion, scalability, and product-led growth.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Custom AI Models & Data Intelligence',
+    description:
+      'Predictive analytics, lead scoring models, recommendation engines, content AI systems, and decision-support dashboards for enterprise-grade intelligence.',
+  },
+  {
+    icon: Target,
+    title: 'Funnel Architecture & Revenue Engineering',
+    description:
+      'Full-funnel systems covering acquisition, conversion, retention, and monetization—engineered to maximize LTV and margin.',
   },
   {
     icon: Share2,
-    title: 'Social Media Scaling',
-    description: 'Platform-native strategies that turn social presence into predictable revenue channels.',
+    title: 'Social Media & Community Scaling',
+    description:
+      'Platform-native growth systems that turn audience attention into owned communities and revenue channels at scale.',
   },
 ];
 
