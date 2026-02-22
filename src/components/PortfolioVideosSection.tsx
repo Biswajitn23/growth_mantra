@@ -107,7 +107,8 @@ export default function PortfolioVideosSection() {
             Transforming brands through AI, automation, and scalable growth systems.
           </p>
         </motion.div>
-        <Carousel setApi={setApi} className="w-full">
+        <Carousel setApi={setApi} className="w-full relative">
+          <CarouselPrevious />
           <CarouselContent>
             {videos.map((video) => (
               <CarouselItem key={video.id} className="basis-full sm:basis-1/2 md:basis-1/3 px-3">
@@ -148,6 +149,7 @@ export default function PortfolioVideosSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <CarouselNext />
         </Carousel>
         <div className="text-center mt-6">
           <p className="text-sm text-muted-foreground">

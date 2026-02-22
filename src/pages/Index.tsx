@@ -1,5 +1,8 @@
 import { lazy, Suspense } from 'react';
 import Navbar from '@/components/Navbar';
+import GrowVantaMarquee from '@/components/GrowVantaMarquee';
+import InfiniteMarqueeServices from '@/components/InfiniteMarqueeServices';
+import HighEndMarquee from '@/components/HighEndMarquee';
 import HeroSection from '@/components/HeroSection';
 import MetricsSection from '@/components/MetricsSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -21,13 +24,19 @@ const Index = () => {
       </Suspense>
       <Navbar />
       <HeroSection />
-      <MetricsSection />
+      <div className="my-16">
+        <HighEndMarquee />
+      </div>
       <ServicesSection />
+      <div className="my-16">
+        <InfiniteMarqueeServices />
+      </div>
       <ResultsSection />
       <PortfolioVideosSection />
       <CaseStudiesSection />
       <BrandsSection />
       <TestimonialsSection />
+      <MetricsSection />
       <CTASection />
       <Footer />
     </div>

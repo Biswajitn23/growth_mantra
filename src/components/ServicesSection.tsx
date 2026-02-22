@@ -1,6 +1,9 @@
 import { useRef } from 'react';
+import InfiniteMarqueeServices from './InfiniteMarqueeServices';
+import Autoplay from 'embla-carousel-autoplay';
 import { motion, useInView } from 'framer-motion';
 import { BarChart3, Users, Bot, Target, Share2 } from 'lucide-react';
+import MarqueeCards from './MarqueeCards';
 
 const services = [
   {
@@ -52,8 +55,8 @@ export default function ServicesSection() {
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="services" ref={ref} className="section-padding relative z-10">
-      <div className="max-w-6xl mx-auto">
+    <section id="services" ref={ref} className="relative z-10">
+      <div className="w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -68,27 +71,8 @@ export default function ServicesSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="glass-card rounded-2xl p-8 group"
-              style={{ transformStyle: 'preserve-3d' }}
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-heading text-lg font-semibold mb-3 text-foreground">
-                {service.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
+        <div className="relative overflow-hidden w-full p-0 m-0">
+          <MarqueeCards />
         </div>
       </div>
     </section>
