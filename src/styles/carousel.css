@@ -1,0 +1,181 @@
+/* Embla Carousel Base Styles */
+.embla-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla-container {
+  display: flex;
+  gap: 2rem; /* 32px - will be overridden by inline classes */
+  will-change: transform;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.embla-slide {
+  flex: 0 0 auto;
+  min-width: 0;
+  position: relative;
+}
+
+/* Carousel Slide Card Styling */
+.carousel-slide-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 1.25rem; /* 20px - premium radius */
+  border: 1px solid hsla(265 100% 71% / 0.2);
+  background: linear-gradient(135deg, hsla(265 100% 71% / 0.05), hsla(270 55% 24% / 0.02));
+  padding: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* Shadow effects */
+  box-shadow: 0 8px 32px hsla(270 55% 24% / 0.15),
+    0 0 30px hsla(265 100% 71% / 0.1),
+    inset 0 1px 0 hsla(265 100% 71% / 0.1);
+
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  padding: 1px;
+  background: linear-gradient(135deg, hsla(265 100% 71% / 0.2), hsla(270 55% 24% / 0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.carousel-slide-card:hover {
+  border-color: hsla(265 100% 71% / 0.4);
+  box-shadow: 0 16px 48px hsla(265 100% 71% / 0.25),
+    0 0 50px hsla(265 100% 71% / 0.15),
+    inset 0 1px 0 hsla(265 100% 71% / 0.2);
+  transform: translateY(-8px) scale(1.02);
+  background: linear-gradient(135deg, hsla(265 100% 71% / 0.08), hsla(270 55% 24% / 0.04));
+}
+
+.carousel-slide-card:hover::before {
+  opacity: 1;
+}
+
+/* Navigation Buttons */
+.carousel-nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem; /* 48px */
+  height: 3rem; /* 48px */
+  border-radius: 0.875rem; /* 14px */
+  border: 1px solid hsla(265 100% 71% / 0.2);
+  background-color: hsla(265 100% 71% / 0.1);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0;
+
+  box-shadow: 0 4px 15px hsla(0 0% 0% / 0.2),
+    inset 0 1px 0 hsla(265 100% 71% / 0.1);
+}
+
+.carousel-nav-button:hover:not(:disabled) {
+  background-color: hsla(265 100% 71% / 0.2);
+  border-color: hsla(265 100% 71% / 0.4);
+  box-shadow: 0 8px 25px hsla(265 100% 71% / 0.25),
+    inset 0 1px 0 hsla(265 100% 71% / 0.2);
+  transform: translateY(-2px);
+}
+
+.carousel-nav-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.carousel-nav-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .carousel-slide-card {
+    padding: 1.5rem;
+    border-radius: 1rem; /* 16px on smaller screens */
+  }
+
+  .embla-container {
+    gap: 1.5rem; /* 24px gap on mobile */
+  }
+
+  .carousel-slide-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .carousel-slide-card p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel-slide-card {
+    padding: 1.25rem;
+  }
+
+  .embla-container {
+    gap: 1rem; /* 16px gap on very small screens */
+  }
+
+  .carousel-nav-button {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+  }
+}
+
+/* Smooth scrolling behavior */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Prevent layout shift during transitions */
+.embla-slide {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animation for slide entrance */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-slide-card {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+/* Performance optimizations */
+.embla-carousel {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.embla-container {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}

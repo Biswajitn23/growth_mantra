@@ -1,0 +1,265 @@
+/* Marquee Container & Track */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee-scroll 120s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.marquee-track.marquee-paused {
+  animation-play-state: paused;
+}
+
+.marquee-track.marquee-scrolling {
+  animation-play-state: running;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Marquee Slide Card */
+.marquee-slide {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.marquee-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 1.125rem; /* 18px */
+  border: 1px solid hsla(265 100% 71% / 0.2);
+  background: linear-gradient(135deg, hsla(265 100% 71% / 0.08), hsla(270 55% 24% / 0.04));
+  padding: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Soft shadow */
+  box-shadow: 0 8px 32px hsla(270 55% 24% / 0.15),
+    0 0 24px hsla(265 100% 71% / 0.08),
+    inset 0 1px 0 hsla(265 100% 71% / 0.1);
+
+  /* Before: Glow border effect */
+}
+
+.marquee-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 1.125rem;
+  background: linear-gradient(135deg, hsla(265 100% 71% / 0.3), hsla(270 55% 24% / 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.marquee-card:hover {
+  border-color: hsla(265 100% 71% / 0.4);
+  box-shadow: 0 12px 40px hsla(265 100% 71% / 0.3),
+    0 0 40px hsla(265 100% 71% / 0.2),
+    inset 0 1px 0 hsla(265 100% 71% / 0.2);
+  transform: translateY(-6px) scale(1.01);
+  background: linear-gradient(135deg, hsla(265 100% 71% / 0.12), hsla(270 55% 24% / 0.06));
+}
+
+.marquee-card:hover::before {
+  opacity: 1;
+}
+
+/* Responsive Card Sizing */
+@media (max-width: 1024px) {
+  .marquee-slide {
+    width: 280px;
+    height: 320px;
+  }
+
+  .marquee-card {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .marquee-card h3 {
+    font-size: 1.125rem;
+  }
+
+  .marquee-card p {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-slide {
+    width: 240px;
+    height: 280px;
+  }
+
+  .marquee-card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .marquee-card h3 {
+    font-size: 1rem;
+  }
+
+  .marquee-card p {
+    font-size: 0.75rem;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track {
+    animation: marquee-scroll 100s linear infinite;
+  }
+}
+
+@media (max-width: 640px) {
+  .marquee-slide {
+    width: 200px;
+    height: 240px;
+  }
+
+  .marquee-card {
+    padding: 1rem;
+    border-radius: 0.875rem;
+  }
+
+  .marquee-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .marquee-card p {
+    font-size: 0.7rem;
+  }
+
+  .marquee-card button {
+    font-size: 0.75rem;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track {
+    animation: marquee-scroll 80s linear infinite;
+  }
+}
+
+/* Text Styling */
+.marquee-card h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.marquee-card p {
+  color: hsla(0 0% 100% / 0.75);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.marquee-card button {
+  font-family: var(--font-body);
+  color: hsl(var(--gv-light-purple));
+  font-weight: 600;
+  transition: color 0.3s ease;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.marquee-card button:hover {
+  color: hsl(var(--gv-neon));
+}
+
+/* Performance Optimizations */
+.marquee-container {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.marquee-track {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+}
+
+.marquee-slide {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Smooth scrolling */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Ensure smooth animation */
+@media (prefers-reduced-motion: no-preference) {
+  .marquee-track {
+    animation: marquee-scroll 120s linear infinite;
+  }
+}
+
+/* Pause animation based on media query for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+
+  .marquee-card {
+    transition: none;
+  }
+}
