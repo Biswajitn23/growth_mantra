@@ -37,10 +37,13 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-8 flex justify-center"
         >
-          <p className="text-gv-neon font-heading font-semibold text-sm tracking-[0.2em] uppercase mb-6">
-            GrowVanta Media
-          </p>
+          <img 
+            src="/logo.svg" 
+            alt="GrowVanta Media" 
+            className="h-32 md:h-48 w-auto object-contain"
+          />
         </motion.div>
 
         <motion.h1
@@ -56,7 +59,7 @@ const HeroSection = () => {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto font-body"
         >
           The 360° Growth Engine for Ambitious Brands
@@ -65,7 +68,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a href="#contact" className="gradient-btn text-lg animate-pulse-glow">
