@@ -25,19 +25,17 @@ const SocialEngine = () => {
             className="relative"
           >
             <div className="aspect-square max-w-md mx-auto rounded-3xl bg-card border border-border flex items-center justify-center overflow-hidden">
-              <div className="relative w-full h-full p-10">
-                <div className="absolute inset-8 rounded-2xl bg-gv-mid/10 border border-gv-mid/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-gv-mid/20 flex items-center justify-center mx-auto mb-4">
-                      <TrendingIcon className="w-10 h-10 text-gv-mid" />
-                    </div>
-                    <p className="font-heading font-bold text-foreground text-xl">Growth Engine</p>
-                    <p className="text-gv-mid text-sm mt-1">AI-Powered Analytics</p>
-                  </div>
-                </div>
-                <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-gv-neon/10 animate-float" />
-                <div className="absolute bottom-8 left-4 w-12 h-12 rounded-full bg-gv-mid/15 animate-float" style={{ animationDelay: "2s" }} />
-              </div>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover rounded-3xl"
+              >
+                <source src="/Growth Engine Video.mp4" type="video/mp4" />
+
+              </video>
             </div>
           </motion.div>
 
@@ -78,12 +76,5 @@ const SocialEngine = () => {
     </section>
   );
 };
-
-const TrendingIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-    <polyline points="17 6 23 6 23 12" />
-  </svg>
-);
 
 export default SocialEngine;

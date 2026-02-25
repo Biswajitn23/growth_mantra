@@ -2,25 +2,22 @@
 .marquee-container {
   overflow: hidden;
   width: 100%;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 5%,
-    black 95%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 5%,
-    black 95%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%);
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%);
 }
 
 .marquee-track {
   display: flex;
-  animation: marquee-scroll 120s linear infinite;
+  animation: marquee-scroll 40s linear infinite;
+
   will-change: transform;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
@@ -38,6 +35,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -55,7 +53,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-radius: 1.125rem; /* 18px */
+  border-radius: 1.125rem;
+  /* 18px */
   border: 1px solid hsla(265 100% 71% / 0.2);
   background: linear-gradient(135deg, hsla(265 100% 71% / 0.08), hsla(270 55% 24% / 0.04));
   padding: 2rem;
@@ -140,13 +139,16 @@
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }
   }
 
   .marquee-track {
-    animation: marquee-scroll 100s linear infinite;
+    animation: marquee-scroll 22s linear infinite;
+
+
   }
 }
 
@@ -177,13 +179,16 @@
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }
   }
 
   .marquee-track {
-    animation: marquee-scroll 80s linear infinite;
+    animation: marquee-scroll 18s linear infinite;
+
+
   }
 }
 
@@ -249,8 +254,9 @@
 /* Ensure smooth animation */
 @media (prefers-reduced-motion: no-preference) {
   .marquee-track {
-    animation: marquee-scroll 120s linear infinite;
+    animation: marquee-scroll 40s linear infinite;
   }
+
 }
 
 /* Pause animation based on media query for users who prefer reduced motion */

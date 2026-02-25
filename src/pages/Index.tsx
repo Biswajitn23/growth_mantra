@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import WhatWeDoSection from "@/components/WhatWeDoSection";
 import SocialEngine from "@/components/SocialEngine";
 import WhatWeDeliverSection from "@/components/WhatWeDeliverSection";
@@ -15,6 +16,7 @@ const Index = () => {
     <main className="overflow-x-hidden">
       <Navbar />
       <HeroSection />
+      <AboutSection />
       <WhatWeDoSection />
       <SocialEngine />
       <WhatWeDeliverSection />
@@ -27,5 +29,6 @@ const Index = () => {
     </main>
   );
 };
+
 
 export default Index;

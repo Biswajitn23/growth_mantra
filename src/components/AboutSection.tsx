@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
@@ -40,6 +40,7 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-24 bg-background">
+
       <div className="container mx-auto px-6" ref={ref}>
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
