@@ -14,22 +14,57 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Animated particles */}
+      {/* Rising Particle System (Firefly Style) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-gv-neon/20 animate-float"
-            style={{
-              width: `${Math.random() * 6 + 2}px`,
-              height: `${Math.random() * 6 + 2}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${Math.random() * 4 + 4}s`,
-            }}
-          />
-        ))}
+        {Array.from({ length: 100 }).map((_, i) => {
+          const size = Math.random() * 10 + 2;
+          const duration = 7 + Math.random() * 4; // 7s to 11s
+          const delay = Math.random() * 11;
+          const startX = Math.random() * 100;
+          const endX = startX + (Math.random() * 20 - 10); // Slight horizontal drift
+
+          return (
+            <motion.div
+              key={`firefly-${i}`}
+              className="absolute"
+              initial={{
+                x: `${startX}vw`,
+                y: "110vh",
+                opacity: 0
+              }}
+              animate={{
+                x: `${endX}vw`,
+                y: "-20vh",
+                opacity: [0, 1, 1, 0] // Fade in, hold, fade out
+              }}
+              transition={{
+                duration: duration,
+                repeat: Infinity,
+                ease: "linear",
+                delay: delay
+              }}
+              style={{ width: size, height: size }}
+            >
+              <motion.div
+                className="w-full h-full rounded-full"
+                style={{
+                  background: "radial-gradient(hsl(0, 0%, 100%), hsla(265, 100%, 95%, 0.8) 10%, hsla(265, 100%, 90%, 0) 60%)",
+                  mixBlendMode: "screen",
+                }}
+                animate={{
+                  scale: [0.4, 2.2, 0.4],
+                  opacity: [1, 0.7, 1]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: Math.random() * 2
+                }}
+              />
+            </motion.div>
+          );
+        })}
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
@@ -39,9 +74,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8 flex justify-center"
         >
-          <img 
-            src="/logo.svg" 
-            alt="GrowVanta Media" 
+          <img
+            src="/logo.svg"
+            alt="GrowVanta Media"
             className="h-32 md:h-48 w-auto object-contain"
           />
         </motion.div>

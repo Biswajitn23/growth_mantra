@@ -93,8 +93,15 @@ export default {
           "100%": { opacity: "1" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsla(265, 100%, 71%, 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsla(265, 100%, 71%, 0.6)" },
+          "0%, 100%": {
+            boxShadow: "0 0 15px hsla(0, 0%, 100%, 0.3)",
+            filter: "brightness(1) contrast(1)"
+          },
+          "50%": {
+            boxShadow: "0 0 35px hsla(0, 0%, 100%, 0.6)",
+            filter: "brightness(1.15) contrast(1.1)",
+            transform: "scale(1.02)"
+          },
         },
         "progress-line": {
           "0%": { width: "0%" },
@@ -106,7 +113,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.6s ease-out forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         "progress-line": "progress-line 2s ease-out forwards",
       },
     },
