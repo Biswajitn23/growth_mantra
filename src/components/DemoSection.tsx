@@ -55,9 +55,14 @@ const DemoCard = ({ d, i, inView }: { d: any; i: number; inView: boolean }) => {
     if (isPlaying) {
       videoRef.current.pause();
     } else {
+      // Pause all other videos on the page
+      document.querySelectorAll('video').forEach(vid => {
+        if (vid !== videoRef.current) {
+          vid.pause();
+        }
+      });
       videoRef.current.play();
     }
-    setIsPlaying(!isPlaying);
   };
 
   const toggleMute = (e: React.MouseEvent) => {
@@ -101,6 +106,8 @@ const DemoCard = ({ d, i, inView }: { d: any; i: number; inView: boolean }) => {
               playsInline
               muted={isMuted}
               onTimeUpdate={handleTimeUpdate}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
               className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
             >
 
