@@ -16,7 +16,7 @@ const columns = [
       { label: "About Us", href: "#about" },
       { label: "Our Process", href: "#about" },
       { label: "Careers", href: "#contact" },
-      { label: "Blog", href: "#contact" },
+      { label: "Sitemap", href: "/sitemap.xml" },
     ],
   },
   {
@@ -96,6 +96,9 @@ const FooterSection = () => {
           <p className="text-primary-foreground/30 text-sm">
             © 2026 GrowVanta Media. All rights reserved.
           </p>
+          <div className="mt-2 text-primary-foreground/40 text-xs">
+            Developed by <span className="font-semibold text-primary-foreground/60">Biswajit</span> and <span className="font-semibold text-primary-foreground/60">Nitin</span>
+          </div>
         </div>
       </div>
     </footer>
